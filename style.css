@@ -57,3 +57,24 @@ h2 span{
     opacity: 0.7;
     background: yellow;
 }
+
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+section .text{
+    position: relative;
+    font-size: 10em;
+    text-align: center;
+    color: yellow;
+}
+
+section .text span{
+    position: relative;
+    display: inline-block;
+}
