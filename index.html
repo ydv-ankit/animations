@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animations</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h2><span>My first</span>Animation</h2>
+      <h2><span>My first</span><br />Animation</h2>
     </div>
-    
-</body>
+    <script src="anime.min.js"></script>
+    <script>
+      const container = document.querySelector(".container");
+      for (let i = 0; i < 300; i++) {
+        const block = document.createElement("div");
+        block.classList.add("block");
+        if (i % 2 == 0) {
+          block.classList.add("block-blue");
+        }else {
+          block.classList.add("block-yellow");
+        }
+        container.appendChild(block);
+      }
+    </script>
+
+    <script>
+      function fs() {
+        anime({
+          targets: ".container .block",
+          translateX: function () {
+            return anime.random(-1000, 1000);
+          },
+          translateY: function () {
+            return anime.random(-700, 700);
+          },
+          scale: function () {
+            return anime.random(1, 6);
+          },
+          easing: "linear",
+          duration: 5000,
+          delay: anime.stagger(10),
+          complete: function (anim) {
+            anime({
+              targets: ".container .block",
+              translateX: 0,
+              translateY: 0,
+              scale: 1,
+              duration: 3000,
+              easing: "linear",
+              delay: anime.stagger(10),
+            });
+          },
+        });
+      }
+      fs();
+    </script>
+  </body>
 </html>
