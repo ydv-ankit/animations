@@ -71,10 +71,16 @@ section .text{
     position: relative;
     font-size: 10em;
     text-align: center;
-    color: yellow;
+    color: white;
 }
 
 section .text span{
     position: relative;
     display: inline-block;
+}
+
+section .flytext{
+    max-width: 65%;
+    font-size: 20px;
+    text-align: center;
 }

@@ -60,7 +60,7 @@
     </script> -->
 
     <!-- second animation -->
-    <section>
+    <!-- <section>
       <h2 class="text">Text Animation</h2>
     </section>
 
@@ -112,6 +112,56 @@
           duration: 2000,
           delay: anime.stagger(100),
         });
+    </script> -->
+
+    <!-- flying text animation -->
+    <section class="fly">
+      <p class="text flytext">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, minus
+        fugit. Nemo, quis eius! Quos sunt odit aliquid, veniam illum cum quaerat
+        consectetur repellat expedita dicta voluptatem deserunt est doloremque
+        sit nisi accusantium rem tempore at quam sequi voluptatum rerum unde?
+        Animi dolores adipisci nostrum iste tempora. Itaque, odit reprehenderit
+        tempora nam temporibus quos! Sunt eaque non omnis natus. Maiores maxime
+        quam blanditiis rem doloremque fugit aut aliquid officiis rerum. Aut
+        iusto praesentium a! Ipsam adipisci similique et earum at, quam
+        voluptates ut iusto deserunt praesentium ipsum sit nemo eius
+        perspiciatis, repudiandae quaerat, recusandae amet fugiat. Earum sunt
+        eligendi aperiam!
+      </p>
+    </section>
+
+    <script>
+      const text = document.querySelector(".flytext");
+      text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+      const animation = anime.timeline({
+        targets: '.flytext span',
+        easing: 'easeOutExpo',
+        loop: true
+      });
+
+      animation.add({
+        rotate: function(){
+            return anime.random(-360, 360)
+        },
+        translateX: function(){
+            return anime.random(-500, 500)
+        },
+        translateY: function(){
+            return anime.random(-500, 500)
+        },
+        duration: 5000,
+        delay: anime.stagger(30)
+      })
+      .add({
+        rotate: 0,
+        translateX: 0,
+        translateY: 0,
+        duration: 5000,
+        delay: anime.stagger(30)
+      })
+
     </script>
   </body>
 </html>
