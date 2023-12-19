@@ -115,7 +115,7 @@
     </script> -->
 
     <!-- flying text animation -->
-    <section class="fly">
+    <!-- <section class="fly">
       <p class="text flytext">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, minus
         fugit. Nemo, quis eius! Quos sunt odit aliquid, veniam illum cum quaerat
@@ -162,6 +162,69 @@
         delay: anime.stagger(30)
       })
 
+    </script> -->
+
+    <!-- timeline animation -->
+    <section class="timeline">
+      <img src="assets/stars.png" id="stars">
+      <img src="assets/moon.png" id="moon">
+      <img src="assets/mountains_behind.png" id="mountains_behind">
+      <h2 id="text">
+        Good <span>Night</span>
+      </h2>
+      <a href="#" id="btn">Play</a>
+      <img src="assets/mountains_front.png" id="mountains_front">
+    </section>
+
+    <script>
+      var animation = anime.timeline({
+        autoplay: false
+      })
+
+      animation.add({
+        targets: '#btn',
+        top: '1500px',
+        duration: 500,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#stars',
+        top: '0px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#mountains_behind',
+        bottom: '0px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#moon',
+        top: '0px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#mountains_front',
+        bottom: '0px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#text',
+        marginRight: '0px',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      .add({
+        targets: '#btn',
+        top: '50%',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      })
+      document.querySelector('#btn').onclick = animation.play;
     </script>
+
   </body>
 </html>

@@ -4,83 +4,78 @@
   box-sizing: border-box;
 }
 
-body {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: red;
-}
-
-.container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h2{
-    color: #fff;
-    text-align: center;
-    font-size: 80px;
-    line-height: 1em;
-    z-index: 1000;
-    font-weight: 900;
-}
-
-h2 span{
-    font-size: 0.4em;
-    letter-spacing: 0.4em;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.block{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 9999px;
-    background: rgba(255, 0, 0, 0.312);
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-}
-
-.block-blue{
-    background: blue;
-    opacity: 0.4;
-}
-
-.block-yellow{
-    opacity: 0.7;
-    background: yellow;
-}
-
-section{
-    position: relative;
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
-section .text{
-    position: relative;
-    font-size: 10em;
-    text-align: center;
-    color: white;
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
 }
 
-section .text span{
-    position: relative;
+section img#moon{
+    mix-blend-mode: screen;
+    top: -100%;
+}
+
+section img#stars{
+    height: 100%;
+    object-fit: cover;
+    top: -100%;
+}
+
+section img#mountains_behind{
+    bottom: -100%;
+    top: initial;
+}
+
+section img#mountains_front{
+    bottom: -100%;
+    top: initial;
+    z-index: 100;
+}
+
+#text{
+    position: absolute;
+    color: #fff;
+    font-size: 6vw;
+    font-weight: 200;
+    margin-right: -200%;
+}
+
+#text span{
+    font-weight: 700;
+}
+
+#btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    margin-top: 80px;
     display: inline-block;
-}
-
-section .flytext{
-    max-width: 65%;
-    font-size: 20px;
-    text-align: center;
+    padding: 8px 50px;
+    background: #fff;
+    border-radius: 40px;
+    font-size: 1.4em;
+    color: #2b1055;
+    z-index: 1000;
 }
